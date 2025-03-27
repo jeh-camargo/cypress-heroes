@@ -18,11 +18,16 @@
             cy.get(this.selectorsList().loginButton).click()
         }
 
-        loginUserSuccess (email, password){
+        loginUserSuccess (){
             cy.get(this.selectorsList().emailField).type("test@test.com")
             cy.get(this.selectorsList().passwordField).type("test123")
             cy.get(this.selectorsList().signInButton).click()
+        }
 
+        loginAdminSuccess (){
+            cy.get(this.selectorsList().emailField).type("admin@test.com")
+            cy.get(this.selectorsList().passwordField).type("test123")
+            cy.get(this.selectorsList().signInButton).click()
         }
     }
 
