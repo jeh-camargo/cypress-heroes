@@ -9,7 +9,8 @@ class CreateNewHero{
             powersList: "[data-cy='powersSelect']",
             avatarField: "[data-cy='avatarFile']",
             powerFlying: "[value='1']",
-            submitButton: "[novalidate=''] button"
+            submitButton: "form button",
+            errorMessageNewHero: ".px-8"
 
         }
         return selectors
@@ -19,14 +20,20 @@ class CreateNewHero{
         cy.get(this.selectorsList().createNewHeroButton).click()
     }
 
-    CreateNewHero(){
-        cy.get(this.selectorsList().nameField).type('Fire Man')
-        cy.get(this.selectorsList().priceField).type('100')
-        cy.get(this.selectorsList().fansField).type('100')
-        cy.get(this.selectorsList().savesField).type('45')
-        cy.get(this.selectorsList().powersList).select('2')
-        cy.get(this.selectorsList().avatarField).selectFile('server/prisma/images/hero1.png', { action: 'drag-drop' })
+    CreateNewHero(name, price, fans, saves, power){
+        cy.get(this.selectorsList().nameField).type(name)
+        cy.get(this.selectorsList().priceField).type(price)
+        cy.get(this.selectorsList().fansField).type(fans)
+        cy.get(this.selectorsList().savesField).type(saves)
+        cy.get(this.selectorsList().powersList).select(power)
+        cy.get(this.selectorsList().avatarField).selectFile('server/prisma/images/hero2.png', {force : true})
         cy.get(this.selectorsList().submitButton).click()
+       
+    }
+
+
+    ErrorCreateNewHero(){
+        cy.get(this.selectorsList().errorMessageNewHero).contains(/Name is required|Price is required|Fans is required|Saves is required|Powers is required/).should('exist')
     }
 
 }

@@ -1,0 +1,32 @@
+{
+    "userSuccess": {
+      "email": "test@test.com",
+      "password": "test123"
+    },
+
+    "adminSuccess": {
+        "email": "admin@test.com",
+        "password": "test123"
+    },
+  
+    "userFail":{
+      "email": "testes@test.com",
+      "password": "test1234"
+    },
+
+    "createHeroSuccess": {
+        "name": "Fire Man",
+        "price": "100",
+        "fans": "100",
+        "saves": "3",
+        "power": "2"
+    },
+  
+    "createHeroFail":{
+        "name": "Spider Girl",
+        "price": " ",
+        "fans": "20",
+        "saves": "3",
+        "power": "5"
+    }
+  }
