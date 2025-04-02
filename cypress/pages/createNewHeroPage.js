@@ -26,7 +26,7 @@ class CreateNewHero{
         cy.get(this.selectorsList().fansField).type(fans)
         cy.get(this.selectorsList().savesField).type(saves)
         cy.get(this.selectorsList().powersList).select(power)
-        cy.get(this.selectorsList().avatarField).selectFile('server/prisma/images/hero2.png', {force : true})
+        cy.get(this.selectorsList().avatarField).selectFile('cypress/fixtures/Images/png-transparent-avatar.png', {force : true})
         cy.get(this.selectorsList().submitButton).click()
        
     }

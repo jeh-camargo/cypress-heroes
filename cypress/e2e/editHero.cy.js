@@ -18,6 +18,7 @@ describe ('Teste editando um heroi', () => {
         editHero.accessEditHero()
 
         editHero.editHero(chance.last(),chance.prime({min: 0, max: 20000}),chance.prime({min: 0, max: 2000}), chance.prime({min: 0, max: 2000}),chance.integer({ min: 0, max: 8 }))
+    
         
     })
 
